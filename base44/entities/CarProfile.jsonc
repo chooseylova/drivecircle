@@ -1,0 +1,80 @@
+{
+  "name": "CarProfile",
+  "type": "object",
+  "properties": {
+    "owner_email": {
+      "type": "string",
+      "description": "Email of the car owner"
+    },
+    "owner_name": {
+      "type": "string",
+      "description": "Display name of the owner"
+    },
+    "car_name": {
+      "type": "string",
+      "description": "Nickname for the car"
+    },
+    "year": {
+      "type": "number",
+      "description": "Year of the car"
+    },
+    "make": {
+      "type": "string",
+      "description": "Car manufacturer"
+    },
+    "model": {
+      "type": "string",
+      "description": "Car model"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Bio/story about the car"
+    },
+    "photos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of photo URLs"
+    },
+    "cover_photo": {
+      "type": "string",
+      "description": "Main cover photo URL"
+    },
+    "youtube_playlist_url": {
+      "type": "string",
+      "description": "YouTube playlist URL that auto-plays on profile"
+    },
+    "mods": {
+      "type": "string",
+      "description": "List of modifications done to the car"
+    },
+    "horsepower": {
+      "type": "number",
+      "description": "Horsepower"
+    },
+    "color": {
+      "type": "string",
+      "description": "Car color"
+    },
+    "likes_count": {
+      "type": "number",
+      "description": "Number of likes",
+      "default": 0
+    },
+    "liked_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Emails of users who liked",
+      "default": []
+    }
+  },
+  "required": [
+    "owner_email",
+    "car_name",
+    "make",
+    "model"
+  ]
+}

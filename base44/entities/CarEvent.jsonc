@@ -1,0 +1,90 @@
+{
+  "name": "CarEvent",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Event title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Event description"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Event date and time"
+    },
+    "location_name": {
+      "type": "string",
+      "description": "Name of the location"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Latitude of event location"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Longitude of event location"
+    },
+    "cover_image": {
+      "type": "string",
+      "description": "Event cover image URL"
+    },
+    "organizer_email": {
+      "type": "string",
+      "description": "Email of the event organizer"
+    },
+    "organizer_name": {
+      "type": "string",
+      "description": "Name of the organizer"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "car_meet",
+        "car_show",
+        "cruise",
+        "drag_race",
+        "drift_event",
+        "auction",
+        "swap_meet",
+        "other"
+      ],
+      "description": "Type of car event"
+    },
+    "attendees": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Emails of attendees",
+      "default": []
+    },
+    "attendee_count": {
+      "type": "number",
+      "default": 0
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "user_created",
+        "facebook",
+        "external"
+      ],
+      "default": "user_created"
+    },
+    "external_url": {
+      "type": "string",
+      "description": "External link to event page"
+    }
+  },
+  "required": [
+    "title",
+    "date",
+    "location_name",
+    "latitude",
+    "longitude",
+    "organizer_email"
+  ]
+}

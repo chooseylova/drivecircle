@@ -1,0 +1,11 @@
+{
+  "name": "GiveawayWatch",
+  "type": "object",
+  "properties": {
+    "giveaway_id": { "type": "string" },
+    "user_email": { "type": "string" },
+    "started_at": { "type": "string", "format": "date-time", "description": "Server time the member started the video" },
+    "completed": { "type": "boolean", "default": false }
+  },
+  "required": ["giveaway_id", "user_email", "started_at"]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "GiveawayEntry",
+  "type": "object",
+  "properties": {
+    "giveaway_id": { "type": "string" },
+    "user_email": { "type": "string" },
+    "user_name": { "type": "string" },
+    "watched_seconds": { "type": "number" }
+  },
+  "required": ["giveaway_id", "user_email"]
+}

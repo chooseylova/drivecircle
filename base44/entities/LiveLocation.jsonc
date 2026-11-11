@@ -1,0 +1,23 @@
+{
+  "name": "LiveLocation",
+  "type": "object",
+  "properties": {
+    "user_email": { "type": "string" },
+    "user_name": { "type": "string" },
+    "avatar_url": { "type": "string" },
+    "sharing": { "type": "boolean", "default": false, "description": "True only while the member has live sharing switched on" },
+    "visibility": { "type": "string", "enum": ["everyone", "followers"], "default": "followers", "description": "everyone = all signed-in members; followers = only members who follow this person" },
+    "precision": { "type": "string", "enum": ["exact", "approximate"], "default": "exact", "description": "approximate rounds the position to about 1 km" },
+    "latitude": { "type": "number" },
+    "longitude": { "type": "number" },
+    "accuracy": { "type": "number", "description": "GPS accuracy in meters" },
+    "heading": { "type": "number" },
+    "speed": { "type": "number", "description": "meters per second" },
+    "car_id": { "type": "string" },
+    "car_label": { "type": "string", "description": "e.g. 2019 Mustang GT" },
+    "status_note": { "type": "string", "description": "Short note e.g. 'Heading to Cars & Coffee'" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "expires_at": { "type": "string", "format": "date-time", "description": "Sharing automatically stops after this time" }
+  },
+  "required": ["user_email"]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Giveaway",
+  "type": "object",
+  "properties": {
+    "title": { "type": "string", "description": "e.g. Daily $25 Gas Card" },
+    "description": { "type": "string" },
+    "prize": { "type": "string", "description": "What the winner gets, e.g. $25 Shell gift card" },
+    "prize_value": { "type": "number", "description": "Approximate retail value in USD" },
+    "image_url": { "type": "string", "description": "Prize / sponsor image" },
+    "period": { "type": "string", "enum": ["daily", "weekly"], "default": "daily" },
+    "video_url": { "type": "string", "description": "Sponsor video (YouTube link or uploaded MP4) members must watch to enter" },
+    "min_watch_seconds": { "type": "number", "default": 30, "description": "Seconds of video that must be watched before entering" },
+    "sponsor_name": { "type": "string" },
+    "sponsor_url": { "type": "string" },
+    "starts_at": { "type": "string", "format": "date-time" },
+    "ends_at": { "type": "string", "format": "date-time" },
+    "status": { "type": "string", "enum": ["active", "drawn", "cancelled"], "default": "active" },
+    "auto_renew": { "type": "boolean", "default": false, "description": "Automatically create the next day's/week's giveaway when this one is drawn" },
+    "entry_count": { "type": "number", "default": 0 },
+    "winner_email": { "type": "string" },
+    "winner_name": { "type": "string" },
+    "previous_winner_emails": { "type": "array", "items": { "type": "string" }, "default": [], "description": "Winners who were re-drawn (e.g. didn't claim)" },
+    "drawn_at": { "type": "string", "format": "date-time" },
+    "rules": { "type": "string", "description": "Optional extra rules for this giveaway" }
+  },
+  "required": ["title", "prize", "period", "video_url", "starts_at", "ends_at"]
+}

@@ -1,0 +1,84 @@
+{
+  "name": "MarketplaceListing",
+  "type": "object",
+  "properties": {
+    "seller_email": {
+      "type": "string"
+    },
+    "seller_name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "vehicle",
+        "parts",
+        "wheels_tires",
+        "audio",
+        "exterior",
+        "interior",
+        "tools",
+        "other"
+      ]
+    },
+    "condition": {
+      "type": "string",
+      "enum": [
+        "new",
+        "like_new",
+        "good",
+        "fair",
+        "for_parts"
+      ]
+    },
+    "photos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "location": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "sold",
+        "pending"
+      ],
+      "default": "active"
+    },
+    "contact_info": {
+      "type": "string"
+    },
+    "year": {
+      "type": "number"
+    },
+    "make": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "mileage": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "seller_email",
+    "title",
+    "price",
+    "category"
+  ]
+}
